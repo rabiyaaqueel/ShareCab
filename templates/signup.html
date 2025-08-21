@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h2>Sign Up</h2>
+<form method="POST">
+    Name: <input type="text" name="name" required><br>
+    Email: <input type="email" name="email" required><br>
+    Password: <input type="password" name="password" required><br>
+    Gender:
+    <select name="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select><br>
+
+    Role:
+    <select name="role" id="role_select" onchange="toggleCapacity()">
+        <option value="user">User</option>
+        <option value="driver">Driver</option>
+    </select><br>
+
+    <div id="capacity_div" style="display:none;">
+        Seat Capacity: <input type="number" name="capacity" min="1" max="6"><br>
+    </div>
+
+    <div id="driver_location" style="display:none;">
+        Driver Start Location: <input type="text" name="driver_location"><br>
+    </div>
+
+    <input type="submit" value="Sign Up">
+</form>
+<a href="/login">Already have an account? Login</a>
+
+<script>
+function toggleCapacity() {
+    var role = document.getElementById('role_select').value;
+    document.getElementById('capacity_div').style.display = role=='driver' ? 'block' : 'none';
+    document.getElementById('driver_location').style.display = role=='driver' ? 'block' : 'none';
+}
+</script>
+</body>
+</html>

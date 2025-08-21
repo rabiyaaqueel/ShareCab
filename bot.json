@@ -1,0 +1,49 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening"],
+      "responses": ["Hello! How can I assist you with your ride today?", "Hi there! Looking for a ride or need help with your booking?"]
+    },
+    {
+      "tag": "fare_inquiry",
+      "patterns": ["How much is the fare?", "Fare for a ride", "Cost of ride from A to B", "Ride charges"],
+      "responses": ["You can enter your pickup and drop locations to get the estimated fare.", "Fare depends on distance and type of vehicle. Enter your locations to know more."]
+    },
+    {
+      "tag": "book_ride",
+      "patterns": ["I want to book a ride", "Book a cab", "Reserve a ride", "Ride booking"],
+      "responses": ["Sure! Please provide your pickup and drop locations.", "Let's get your ride booked. Where do you want to go from and to?"]
+    },
+    {
+      "tag": "cancel_ride",
+      "patterns": ["Cancel my ride", "I want to cancel", "Stop my booking"],
+      "responses": ["Your ride has been canceled. Is there anything else I can help with?", "Ride canceled successfully. Do you want to book another ride?"]
+    },
+    {
+      "tag": "driver_info",
+      "patterns": ["Who is my driver?", "Driver details", "Driver name and contact"],
+      "responses": ["Your driver is John Doe. You can contact him at +91 9876543210.", "Your assigned driver is Jane Smith. You can call her at +91 9123456789."]
+    },
+    {
+      "tag": "complaint",
+      "patterns": ["I want to report an issue", "Complaint", "Problem with ride", "Driver was late"],
+      "responses": ["Please describe your issue and we will forward it to our support team.", "We are sorry for the inconvenience. Kindly provide the details of your complaint."]
+    },
+    {
+      "tag": "ride_status",
+      "patterns": ["Where is my ride?", "Track my ride", "Ride status", "Is my ride coming?"],
+      "responses": ["Your ride is on its way. You can track it on the app.", "Driver is 5 minutes away from your pickup location."]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "Thanks for your help"],
+      "responses": ["You're welcome!", "Happy to help! Enjoy your ride."]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Goodbye", "See you", "Talk later"],
+      "responses": ["Goodbye! Have a safe ride.", "See you! Feel free to reach out anytime."]
+    }
+  ]
+}

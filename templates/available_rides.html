@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Rides</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h2>Available Drivers</h2>
+<ul>
+{% for d in drivers %}
+  <li>{{ d.name }} ({{ d.gender }}) - Seats Left: {{ d.seats_left }}</li>
+  <form method="POST" action="/book_ride/{{ d.email }}">
+      <button type="submit">Book Ride with this Driver</button>
+  </form>
+{% endfor %}
+</ul>
+
+<h3>Other Users on this Route</h3>
+<ul>
+{% for u in users %}
+  <li>{{ u }}</li>
+{% else %}
+  <li>No other users on this route yet.</li>
+{% endfor %}
+</ul>
+
+<a href="/user_dashboard">Back to Dashboard</a>
+</body>
+</html>

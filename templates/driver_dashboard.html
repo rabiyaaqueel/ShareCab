@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Driver Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h2>Welcome, {{ session['user']['name'] }}</h2>
+
+<h3>Pending Rides</h3>
+<ul>
+{% for r in rides %}
+  <li>
+    Pickup: {{ r.pickup }}, Drop: {{ r.drop }}, Fare: {{ r.fare }}<br>
+    Passengers: 
+    {% for p in r.passengers %}
+        {{ p.name }} ({{ p.gender }}),
+    {% endfor %}
+    <a href="/accept_ride/{{ r.id }}">Accept Ride</a>
+  </li>
+{% else %}
+  <li>No pending rides</li>
+{% endfor %}
+</ul>
+
+<h3>Confirmed Rides</h3>
+<ul>
+{% for r in confirmed_rides %}
+  <li>
+    Pickup: {{ r.pickup }}, Drop: {{ r.drop }}, Fare: {{ r.fare }}<br>
+    Passengers:
+    {% for p in r.passengers %}
+        {{ p.name }} ({{ p.gender }}),
+    {% endfor %}
+    <!-- Optional: link to view map for this ride -->
+    <a href="/map/{{ r.driver }}">View Route</a>
+  </li>
+{% else %}
+  <li>No confirmed rides</li>
+{% endfor %}
+</ul>
+
+<h3>Full Rides</h3>
+<ul>
+{% for r in full_rides %}
+  <li>
+    Pickup: {{ r.pickup }}, Drop: {{ r.drop }}, Fare: {{ r.fare }}<br>
+    Passengers:
+    {% for p in r.passengers %}
+        {{ p.name }} ({{ p.gender }}),
+    {% endfor %}
+  </li>
+{% else %}
+  <li>No full rides</li>
+{% endfor %}
+</ul>
+
+<center>
+<a href="/logout">Logout</a>
+</center>
+</body>
+</html>
+
