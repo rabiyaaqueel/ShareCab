@@ -1,3 +1,5 @@
+setuptools>=65.5.1
+wheel
 Flask==2.3.3
 Werkzeug==2.3.7
 redis==5.0.1
@@ -7,3 +9,4 @@ nltk==3.8.1
 folium==0.14.0
 geopy==2.3.0
 gunicorn==21.2.0
+
